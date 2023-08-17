@@ -44,41 +44,35 @@ export const OrderSummary: FC<OrderSummaryProps> = (props) => {
       <PropertyList>
         <PropertyListItem
           align={align}
-          label="Customer"
+          label="Model"
         >
           <Typography variant="subtitle2">
-            {order.customer.name}
+          Logan EXPRESSION 
           </Typography>
           <Typography
             color="text.secondary"
             variant="body2"
           >
-            {order.customer.address1}
+           TCe 
           </Typography>
           <Typography
             color="text.secondary"
             variant="body2"
           >
-            {order.customer.city}
-          </Typography>
-          <Typography
-            color="text.secondary"
-            variant="body2"
-          >
-            {order.customer.country}
+            90 CVT
           </Typography>
         </PropertyListItem>
         <Divider />
         <PropertyListItem
           align={align}
-          label="ID"
+          label="VIN"
           value={order.id}
         />
         <Divider />
         <PropertyListItem
           align={align}
-          label="Invoice"
-          value={order.number}
+          label="Engine"
+          value={"TCe 90"}
         />
         <Divider />
         <PropertyListItem
@@ -89,58 +83,16 @@ export const OrderSummary: FC<OrderSummaryProps> = (props) => {
         <Divider />
         <PropertyListItem
           align={align}
-          label="Promotion Code"
-          value={order.promotionCode}
+          label="Transmission"
+          value={"Automatic CVT"}
         />
         <Divider />
         <PropertyListItem
           align={align}
-          label="Total Amount"
-          value={`${order.currency}${order.totalAmount}`}
+          label="Horse Power"
+          value={`90`}
         />
         <Divider />
-        <PropertyListItem
-          align={align}
-          label="Status"
-        >
-          <Stack
-            alignItems={{
-              xs: 'stretch',
-              sm: 'center'
-            }}
-            direction={{
-              xs: 'column',
-              sm: 'row'
-            }}
-            spacing={1}
-          >
-            <TextField
-              label="Status"
-              margin="normal"
-              name="status"
-              onChange={handleChange}
-              select
-              SelectProps={{ native: true }}
-              sx={{
-                flexGrow: 1,
-                minWidth: 150
-              }}
-              value={status}
-            >
-              {statusOptions.map((option) => (
-                <option
-                  key={option}
-                  value={option}
-                >
-                  {option}
-                </option>
-              ))}
-            </TextField>
-            <Button variant="contained">
-              Save
-            </Button>
-          </Stack>
-        </PropertyListItem>
       </PropertyList>
     </Card>
   );

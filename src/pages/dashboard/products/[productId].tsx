@@ -170,13 +170,9 @@ const Page: NextPage = () => {
             <EcommerceSalesRevenue
                   chartSeries={[
                     {
-                      name: 'New Customers',
-                      data: [3350, 1840, 2254, 5780, 9349, 5241, 2770, 2051, 3764, 2385, 5912, 8323]
+                      name: 'KM',
+                      data: [30, 50, 10, 40, 300, 10, 40, 40, 91, 20, 43, 100]
                     },
-                    {
-                      name: 'Up/Cross-Selling',
-                      data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 32, 35]
-                    }
                   ]}
                 />
             <OrderLogs logs={order.logs || []} />

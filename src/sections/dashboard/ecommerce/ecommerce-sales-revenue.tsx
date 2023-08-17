@@ -144,7 +144,7 @@ export const EcommerceSalesRevenue: FC<EcommerceSalesRevenueProps> = (props) => 
 
   return (
     <Card>
-      <CardHeader title="Sales Revenue" />
+      <CardHeader title="Mileage History" />
       <CardContent sx={{ pt: 0 }}>
         <Chart
           height={320}

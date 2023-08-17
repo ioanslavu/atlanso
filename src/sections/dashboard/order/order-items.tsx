@@ -24,7 +24,7 @@ export const OrderItems: FC<OrderItemsProps> = (props) => {
 
   return (
     <Card {...other}>
-      <CardHeader title="Order items" />
+      <CardHeader title="Services" />
       <Scrollbar>
         <Box sx={{ minWidth: 700 }}>
           <Table>

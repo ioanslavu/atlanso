@@ -10,7 +10,7 @@ interface OrderCustomer {
 
 export interface OrderItem {
   id: string;
-  billingCycle: 'daily' | 'weekly' | 'monthly' | 'yearly';
+  billingCycle: 'daily' | 'weekly' | 'monthly' | 'yearly' | 'one time';
   currency: string;
   name: string;
   quantity: number;

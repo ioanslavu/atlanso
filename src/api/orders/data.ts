@@ -302,31 +302,31 @@ export const order: Order = {
   items: [
     {
       id: '5ecb8abbdd6dfb1f9d6bf98b',
-      billingCycle: 'monthly',
-      currency: '$',
-      name: 'Project Points',
-      quantity: 25,
-      unitAmount: 50.25
+      billingCycle: 'yearly',
+      currency: 'RON',
+      name: 'Standard car inspection',
+      quantity: 2,
+      unitAmount: 750
     },
     {
       id: '5ecb8ac10f116d04bed990eb',
-      billingCycle: 'monthly',
-      currency: '$',
+      billingCycle: 'one time',
+      currency: 'RON',
       name: 'Need to recall the new model of Logan',
       quantity: 1,
-      unitAmount: 5.00
+      unitAmount: 0.00
     }
   ],
   logs: [
     {
       id: '9a50be1fa5ec7317d459d5a8',
       createdAt: subHours(Date.now(), 18).getTime(),
-      message: 'Stripe charge complete (Charge ID: 5ecb8a6879877087d4aa2690)'
+      message: 'Recall to service. Known issue with the ECU'
     },
     {
       id: '41845b427db837502b4d6a57',
       createdAt: subHours(Date.now(), 21).getTime(),
-      message: 'Order status changed from Pending payment to Completed.'
+      message: 'Car collected from service'
     }
   ],
   number: 'DEV-103',
