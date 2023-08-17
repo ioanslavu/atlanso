@@ -39,7 +39,7 @@ export const OverviewInbox: FC<OverviewInboxProps> = (props) => {
   return (
     <Card>
       <CardHeader
-        title="Inbox"
+        title="News"
         action={(
           <IconButton color="inherit">
             <SvgIcon fontSize="small">
@@ -130,7 +130,7 @@ export const OverviewInbox: FC<OverviewInboxProps> = (props) => {
         })}
       </List>
       <Divider />
-      <CardActions>
+      {/* <CardActions>
         <Button
           color="inherit"
           endIcon={(
@@ -142,7 +142,7 @@ export const OverviewInbox: FC<OverviewInboxProps> = (props) => {
         >
           Go to chat
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 };

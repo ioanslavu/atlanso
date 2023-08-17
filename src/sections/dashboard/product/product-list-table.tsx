@@ -27,6 +27,9 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+import { RouterLink } from 'src/components/router-link';
+import { paths } from 'src/paths';
 
 import { Scrollbar } from 'src/components/scrollbar';
 import { SeverityPill } from 'src/components/severity-pill';
@@ -132,7 +135,7 @@ export const ProductListTable: FC<ProductListTableProps> = (props) => {
                 Km
               </TableCell>
               <TableCell>
-                sku
+                VIN
               </TableCell>
               <TableCell>
                 Status
@@ -230,9 +233,14 @@ export const ProductListTable: FC<ProductListTableProps> = (props) => {
                             ml: 2
                           }}
                         >
-                          <Typography variant="subtitle2">
-                            {product.name}
-                          </Typography>
+                        <Link
+                          color="inherit"
+                          component={RouterLink}
+                          href={paths.dashboard.products.details}
+                          variant="subtitle2"
+                        >
+                          {product.name}
+                        </Link>
                           <Typography
                             color="text.secondary"
                             variant="body2"

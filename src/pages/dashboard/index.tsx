@@ -7,6 +7,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Stack from '@mui/material/Stack';
 import SvgIcon from '@mui/material/SvgIcon';
 import Typography from '@mui/material/Typography';
+import { addDays, subDays, subHours, subMinutes } from 'date-fns';
 
 import { Seo } from 'src/components/seo';
 import { usePageView } from 'src/hooks/use-page-view';
@@ -19,6 +20,9 @@ import { LogisticsRouteVehicles } from 'src/sections/dashboard/logistics/logisti
 import { LogisticsVehiclesCondition } from 'src/sections/dashboard/logistics/logistics-vehicles-condition';
 import { LogisticsVehiclesList } from 'src/sections/dashboard/logistics/logistics-vehicles-list';
 import { LogisticsVehiclesOverview } from 'src/sections/dashboard/logistics/logistics-vehicles-overview';
+import { OverviewEvents } from 'src/sections/dashboard/overview/overview-events';
+import { OverviewInbox } from 'src/sections/dashboard/overview/overview-inbox';
+const now = new Date();
 
 const Page: NextPage = () => {
   const settings = useSettings();
@@ -153,6 +157,80 @@ const Page: NextPage = () => {
                     temperature: 8,
                     temperatureLabel: 'Very Good'
                   }
+                ]}
+              />
+            </Grid>
+            <Grid
+              xs={12}
+              md={6}
+            >
+              <OverviewEvents
+                events={[
+                  {
+                    id: '3bfa0bc6cbc99bf747c94d51',
+                    createdAt: addDays(now, 1),
+                    description: '17:00 to 18:00',
+                    title: 'Meeting with Partners'
+                  },
+                  {
+                    id: 'dd6c8ce8655ac222b01f24f9',
+                    createdAt: addDays(now, 4),
+                    description: '17:00 to 18:00',
+                    title: 'Weekly Meeting'
+                  },
+                  {
+                    id: 'f274902e2bf226865b3cf947',
+                    createdAt: addDays(now, 4),
+                    description: '17:00 to 18:00',
+                    title: 'Weekly Meeting'
+                  },
+                  {
+                    id: 'd2a66e24110f52acb0cd0b9f',
+                    createdAt: addDays(now, 7),
+                    description: '17:00 to 18:00',
+                    title: 'Weekly Meeting'
+                  }
+                ]}
+              />
+            </Grid>
+            <Grid
+              xs={12}
+              md={6}
+            >
+              <OverviewInbox
+                messages={[
+                  {
+                    id: 'b91cbe81ee3efefba6b915a7',
+                    content: 'Recall to service',
+                    createdAt: subMinutes(now, 2),
+                    senderAvatar: '/assets/products/product-1.png',
+                    senderName: 'Logan EXPRESSION TCe 90 CVT',
+                    // senderOnline: true
+                  },
+                  {
+                    id: 'de0eb1ac517aae1aa57c0b7e',
+                    content: 'Car collected from service',
+                    createdAt: subMinutes(now, 56),
+                    senderAvatar: '/assets/products/product-2.png',
+                    senderName: 'Logan PRESTIGE ECO-G 100',
+                    // senderOnline: false
+                  },
+                  {
+                    id: '38e2b0942c90d0ad724e6f40',
+                    content: 'Repair completed',
+                    createdAt: subHours(subMinutes(now, 23), 3),
+                    senderAvatar: '/assets/products/product-3.png',
+                    senderName: 'Duster JOURNEY Blue dCi 115 4x4',
+                    // senderOnline: true
+                  },
+                  {
+                    id: '467505f3356f25a69f4c4890',
+                    content: 'New error detected in the ECU',
+                    createdAt: subHours(subMinutes(now, 6), 8),
+                    senderAvatar: '/assets/products/product-4.png',
+                    senderName: 'Spring Electric 45',
+                    // senderOnline: true
+                  },
                 ]}
               />
             </Grid>

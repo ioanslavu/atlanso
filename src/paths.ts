@@ -93,7 +93,8 @@ export const paths = {
     },
     products: {
       index: '/dashboard/products',
-      create: '/dashboard/products/create'
+      create: '/dashboard/products/create',
+      details: '/dashboard/products/:productId'
     },
     social: {
       index: '/dashboard/social',
