@@ -34,3 +34,4 @@ Page.getLayout = (page) => (
     {page}
   </>
 );
+export default Page;
