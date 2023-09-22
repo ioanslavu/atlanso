@@ -37,13 +37,8 @@ export const OrderSummary: FC<OrderSummaryProps> = (props) => {
   );
   const align = mdUp ? 'horizontal' : 'vertical';
   const createdAt = format(order.createdAt, 'dd/MM/yyyy HH:mm');
-  useEffect(() => {
-    async function fetchData() {
-      setCar(carData.find((car) => car.id === order.id));
-      console.log(car)
-    }
-    fetchData();
-  }, [])
+  setCar(carData.find((car) => car.id === order.id));
+
   console.log(order.id)
   console.log(car)
   return (

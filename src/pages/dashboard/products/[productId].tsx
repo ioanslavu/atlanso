@@ -57,6 +57,7 @@ const useOrder = (): Order | null => {
 
 const Page: NextPage = () => {
   const order = useOrder();
+  const router = useRouter();
 
   usePageView();
 
@@ -65,7 +66,6 @@ const Page: NextPage = () => {
   }
 
   const createdAt = format(order.createdAt, 'dd/MM/yyyy HH:mm');
-  const router = useRouter();
   const { productId } = router.query;
   console.log(productId)
   if (!productId) {
