@@ -86,7 +86,7 @@ const Page: NextPage = () => {
       <Seo title="Login" />
       <div>
         <Card elevation={16}>
-          <CardHeader
+          {/* <CardHeader
             subheader={(
               <Typography
                 color="text.secondary"
@@ -106,7 +106,7 @@ const Page: NextPage = () => {
             )}
             sx={{ pb: 0 }}
             title="Log in"
-          />
+          /> */}
           <CardContent>
             <form
               noValidate

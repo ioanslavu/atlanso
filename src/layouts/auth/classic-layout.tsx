@@ -43,7 +43,7 @@ export const Layout: FC<LayoutProps> = (props) => {
           zIndex: (theme) => theme.zIndex.appBar
         }}
       >
-        <Container maxWidth="lg">
+        {/* <Container maxWidth="lg">
           <Stack
             direction="row"
             spacing={2}
@@ -84,7 +84,7 @@ export const Layout: FC<LayoutProps> = (props) => {
               </Box>
             </Stack>
           </Stack>
-        </Container>
+        </Container> */}
       </Box>
       <Box
         sx={{
