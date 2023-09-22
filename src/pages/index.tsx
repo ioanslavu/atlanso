@@ -11,25 +11,24 @@ import { HomeReviews } from 'src/sections/home/home-reviews';
 
 const Page: NextPage = () => {
   usePageView();
-
+  const router = useRouter();
+  router.push(paths.dashboard.index);
   return (
     <>
-      <Seo />
+      {/* <Seo />
       <main>
         <HomeHero />
         <HomeFeatures />
         <HomeReviews />
         <HomeCta />
         <HomeFaqs />
-      </main>
+      </main> */}
     </>
   );
 };
 
 Page.getLayout = (page) => (
-  <MarketingLayout>
+  <>
     {page}
-  </MarketingLayout>
+  </>
 );
-
-export default Page;

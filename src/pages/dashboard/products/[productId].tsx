@@ -25,6 +25,8 @@ import { OrderLogs } from 'src/sections/dashboard/order/order-logs';
 import { OrderSummary } from 'src/sections/dashboard/order/order-summary';
 import type { Order } from 'src/types/order';
 import { EcommerceSalesRevenue } from 'src/sections/dashboard/ecommerce/ecommerce-sales-revenue';
+import { useRouter } from 'next/router';
+import { carData } from 'src/api/orders/dataCar';
 
 const useOrder = (): Order | null => {
   const isMounted = useMounted();
@@ -63,6 +65,17 @@ const Page: NextPage = () => {
   }
 
   const createdAt = format(order.createdAt, 'dd/MM/yyyy HH:mm');
+  const router = useRouter();
+  const { productId } = router.query;
+  console.log(productId)
+  if (!productId) {
+    return null;
+  }
+  else {
+    order.id = productId.toString();
+  }
+ 
+   const car = carData.find((car) => car.id === productId);
 
   return (
     <>
@@ -104,7 +117,7 @@ const Page: NextPage = () => {
               >
                 <Stack spacing={1}>
                   <Typography variant="h4">
-                    Logan EXPRESSION TCe 90 CVT
+                    {car?.title}
                   </Typography>
                   <Stack
                     alignItems="center"
@@ -157,7 +170,7 @@ const Page: NextPage = () => {
             </div>
             <Box
               sx={{
-                backgroundImage: `url(/assets/products/product-1.png)`,
+                backgroundImage: `url(${car?.image})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 borderRadius: 1,
@@ -168,13 +181,13 @@ const Page: NextPage = () => {
             <OrderSummary order={order} />
             <OrderItems items={order.items || []} />
             <EcommerceSalesRevenue
-                  chartSeries={[
-                    {
-                      name: 'KM',
-                      data: [30, 50, 10, 40, 300, 10, 40, 40, 91, 20, 43, 100]
-                    },
-                  ]}
-                />
+              chartSeries={[
+                {
+                  name: 'KM',
+                  data: [5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 55000, 60000]
+                },
+              ]}
+            />
             <OrderLogs logs={order.logs || []} />
           </Stack>
         </Container>

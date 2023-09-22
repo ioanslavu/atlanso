@@ -236,7 +236,7 @@ export const ProductListTable: FC<ProductListTableProps> = (props) => {
                         <Link
                           color="inherit"
                           component={RouterLink}
-                          href={paths.dashboard.products.details}
+                          href={`${paths.dashboard.products.details}${product.id}`}
                           variant="subtitle2"
                         >
                           {product.name}

@@ -1,5 +1,5 @@
 import type { ChangeEvent, FC } from 'react';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 import Button from '@mui/material/Button';
@@ -15,6 +15,7 @@ import type { Theme } from '@mui/material/styles/createTheme';
 import type { Order } from 'src/types/order';
 import { PropertyList } from 'src/components/property-list';
 import { PropertyListItem } from 'src/components/property-list-item';
+import { carData } from 'src/api/orders/dataCar';
 
 const statusOptions: string[] = ['Canceled', 'Complete', 'Rejected'];
 
@@ -24,6 +25,7 @@ interface OrderSummaryProps {
 
 export const OrderSummary: FC<OrderSummaryProps> = (props) => {
   const { order, ...other } = props;
+  const [car, setCar] = useState<any>(null);
   const mdUp = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
   const [status, setStatus] = useState<string>(statusOptions[0]);
 
@@ -33,10 +35,17 @@ export const OrderSummary: FC<OrderSummaryProps> = (props) => {
     },
     []
   );
-
   const align = mdUp ? 'horizontal' : 'vertical';
   const createdAt = format(order.createdAt, 'dd/MM/yyyy HH:mm');
-
+  useEffect(() => {
+    async function fetchData() {
+      setCar(carData.find((car) => car.id === order.id));
+      console.log(car)
+    }
+    fetchData();
+  }, [])
+  console.log(order.id)
+  console.log(car)
   return (
     <Card {...other}>
       <CardHeader title="Basic info" />
@@ -47,19 +56,7 @@ export const OrderSummary: FC<OrderSummaryProps> = (props) => {
           label="Model"
         >
           <Typography variant="subtitle2">
-          Logan EXPRESSION 
-          </Typography>
-          <Typography
-            color="text.secondary"
-            variant="body2"
-          >
-           TCe 
-          </Typography>
-          <Typography
-            color="text.secondary"
-            variant="body2"
-          >
-            90 CVT
+            {car?.model}
           </Typography>
         </PropertyListItem>
         <Divider />
@@ -72,7 +69,7 @@ export const OrderSummary: FC<OrderSummaryProps> = (props) => {
         <PropertyListItem
           align={align}
           label="Engine"
-          value={"TCe 90"}
+          value={car?.engine}
         />
         <Divider />
         <PropertyListItem
@@ -84,13 +81,13 @@ export const OrderSummary: FC<OrderSummaryProps> = (props) => {
         <PropertyListItem
           align={align}
           label="Transmission"
-          value={"Automatic CVT"}
+          value={car?.transmission}
         />
         <Divider />
         <PropertyListItem
           align={align}
           label="Horse Power"
-          value={`90`}
+          value={car?.horsepower.toString()}
         />
         <Divider />
       </PropertyList>

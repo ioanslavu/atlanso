@@ -124,7 +124,7 @@ const Page: NextPage = () => {
               <LogisticsVehiclesList
                 vehicles={[
                   {
-                    id: 'VOL-653CD1',
+                    id: 'UU1L5220462400209',
                     endingRoute: 'Mioveni, RO',
                     startingRoute: 'Cleveland, Ohio, USA',
                     status: 'success',
@@ -132,7 +132,7 @@ const Page: NextPage = () => {
                     temperatureLabel: 'Very Good'
                   },
                   {
-                    id: 'VOL-653CD2',
+                    id: 'UU1L5220441200191',
                     endingRoute: 'Mioveni, RO',
                     startingRoute: 'Cleveland, Ohio, USA',
                     status: 'warning',
@@ -141,7 +141,7 @@ const Page: NextPage = () => {
                     warning: 'Temperature not optimal'
                   },
                   {
-                    id: 'VOL-653CD3',
+                    id: 'UU1L4239847891353',
                     endingRoute: 'Timisoara, RO',
                     startingRoute: 'Cleveland, Ohio, USA',
                     status: 'error',
@@ -150,7 +150,7 @@ const Page: NextPage = () => {
                     warning: 'ECU not responding'
                   },
                   {
-                    id: 'VOL-653CD4',
+                    id: 'UU1L4239847892374',
                     endingRoute: 'Timisoara, RO',
                     startingRoute: 'Cleveland, Ohio, USA',
                     status: 'success',

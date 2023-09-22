@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import PropTypes from 'prop-types';
 import type { ApexOptions } from 'apexcharts';
-import { format, subDays } from 'date-fns';
+import { format, subDays, subMonths } from 'date-fns';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
@@ -15,7 +15,7 @@ const createCategories = (): string[] => {
   const categories: string[] = [];
 
   for (let i = 12; i >= 0; i--) {
-    categories.push(format(subDays(now, i), 'dd MMM'));
+    categories.push(format(subMonths(now, i), 'MMM yy'));
   }
 
   return categories;

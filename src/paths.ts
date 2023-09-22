@@ -94,7 +94,7 @@ export const paths = {
     products: {
       index: '/dashboard/products',
       create: '/dashboard/products/create',
-      details: '/dashboard/products/:productId'
+      details: '/dashboard/products/'
     },
     social: {
       index: '/dashboard/social',

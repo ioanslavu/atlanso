@@ -75,6 +75,7 @@ class OrdersApi {
   getOrder(request?: GetOrderRequest): GetOrderResponse {
     return Promise.resolve(deepCopy(order));
   }
+
 }
 
 export const ordersApi = new OrdersApi();
